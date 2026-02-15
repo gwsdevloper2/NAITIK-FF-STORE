@@ -1,191 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAMEX STORE</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>NAITIK FF STORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{box-sizing:border-box;}
 
 body{
-background:linear-gradient(180deg,#14042b,#0b0120);
-color:white;
+margin:0;
+font-family:Poppins, sans-serif;
+background:linear-gradient(135deg,#0f051d,#1a0033,#000814);
+color:#fff;
+scroll-behavior:smooth;
 }
 
+/* HEADER */
 header{
+padding:12px 20px;
+background:#140a26;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:18px 20px;
-background:#12072c;
+gap:12px;
+box-shadow:0 0 15px rgba(255,0,255,0.2);
 }
 
-.logo{
-font-size:22px;
+header img{
+width:45px;
+height:45px;
+border-radius:50%;
+border:2px solid gold;
+object-fit:cover;
+}
+
+.store-name{
 font-weight:700;
-background: linear-gradient(90deg,#f9d423,#ff4e50,#8e2de2);
+font-size:20px;
+background:linear-gradient(90deg,#ffcc00,#ff00cc);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.menu{font-size:22px;}
-
+/* HERO */
 .hero{
+padding:60px 15px;
 text-align:center;
-padding:60px 20px;
-}
-
-.badge{
-display:inline-block;
-padding:8px 20px;
-border-radius:30px;
-background:rgba(255,215,0,0.1);
-border:1px solid gold;
-color:gold;
-margin-bottom:20px;
 }
 
 .hero h1{
-font-size:34px;
-font-weight:700;
-line-height:1.4;
+font-size:28px;
+margin:10px 0;
 }
 
-.hero span{
-background: linear-gradient(90deg,#f9d423,#ff4e50,#8e2de2);
+.hero .highlight-text{
+font-size:36px;
+font-weight:700;
+background:linear-gradient(90deg,#ffcc00,#ff00cc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin:15px 0;
+}
+
+.gradient{
+background:linear-gradient(90deg,#ffcc00,#ff00cc);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-opacity:0.7;
-margin:15px 0 25px;
-}
-
 .btn{
-display:block;
-width:90%;
-max-width:350px;
-margin:10px auto;
-padding:14px;
-border-radius:40px;
-text-align:center;
-font-weight:600;
+display:inline-block;
+padding:12px 22px;
+margin:8px;
+border-radius:25px;
 text-decoration:none;
+font-weight:600;
+font-size:14px;
+transition:0.3s;
 }
 
-.whatsapp{
-background:#25D366;
-color:white;
+.btn-whatsapp{
+background:#25d366;
+color:#fff;
+box-shadow:0 0 12px #25d366;
 }
 
-.gold-btn{
+.btn-outline{
 border:2px solid gold;
 color:gold;
 }
 
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECTION */
 .section{
-padding:40px 20px;
+padding:30px 15px;
+max-width:1200px;
+margin:auto;
 }
 
 .section h2{
-font-size:26px;
-margin-bottom:10px;
+font-size:22px;
 }
 
-.section p{
-opacity:0.6;
-margin-bottom:20px;
-}
-
-.view-all{
-display:inline-block;
+.view-all-btn{
+margin:15px 0;
 padding:10px 20px;
-border:2px solid gold;
-border-radius:30px;
-color:gold;
-text-decoration:none;
+border-radius:25px;
+background:linear-gradient(90deg,#ff00cc,#ffcc00);
+border:none;
+font-weight:600;
+cursor:pointer;
+}
+
+/* PRODUCTS GRID */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+margin-top:20px;
 }
 
 .card{
-background:#1b083f;
-border-radius:20px;
-overflow:hidden;
-margin-bottom:25px;
-box-shadow:0 0 20px rgba(255,0,255,0.2);
+background:#1b0f30;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(255,0,255,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(255,0,255,0.3);
 }
 
 .card img{
 width:100%;
-height:200px;
-object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
 }
 
-.card-content{
-padding:15px;
+.row{
 display:flex;
 justify-content:space-between;
-align-items:center;
+font-size:13px;
+margin:4px 0;
 }
 
 .price{
-color:#f9d423;
-font-size:22px;
-font-weight:600;
-}
-
-.level{
-color:gold;
+font-weight:700;
+font-size:16px;
 }
 
 .view-btn{
-border:2px solid gold;
-padding:8px 18px;
-border-radius:20px;
+padding:5px 14px;
+border-radius:18px;
+border:1px solid gold;
+background:none;
 color:gold;
-text-decoration:none;
+cursor:pointer;
+font-size:12px;
 }
 
-.feature-box{
-background:#14052e;
+.view-btn:hover{
+background:gold;
+color:#000;
+}
+
+/* PREMIUM SERVICES BOX */
+.service-box-wrapper{
+max-width:600px;
+margin:30px auto;
+background:linear-gradient(145deg,#1b0f30,#250434);
 padding:25px;
 border-radius:20px;
+box-shadow:0 0 30px rgba(255,0,255,0.3);
+transition:0.3s;
+}
+
+.service-box-wrapper:hover{
+box-shadow:0 0 50px rgba(255,0,255,0.5);
+transform:translateY(-5px);
+}
+
+.service-item{
+margin:15px 0;
+text-align:center;
+}
+
+.service-item .title{
+font-weight:700;
+font-size:18px;
+background:linear-gradient(90deg,#ffcc00,#ff00cc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:5px;
+}
+
+.service-item .desc{
+font-size:14px;
+color:#aaa;
+}
+
+/* SOCIAL SERVICES BELOW */
+.social-service{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.social-service div{
+display:flex;
+align-items:center;
+gap:8px;
+background:#1b0f30;
+padding:10px 15px;
+border-radius:12px;
+border-left:4px solid gold;
+font-size:14px;
+}
+
+.social-service img{
+width:20px;
+height:20px;
+}
+
+/* BROWSE PAGE */
+#browsePage{
+display:none;
+padding:30px 15px;
+max-width:1200px;
+margin:auto;
+}
+
+.highlight{
+text-align:center;
+font-size:24px;
+margin-bottom:8px;
+}
+
+.count{
+text-align:center;
+color:#aaa;
+margin-bottom:15px;
+font-size:14px;
+}
+
+.search-box{
+text-align:center;
 margin-bottom:20px;
-text-align:center;
-border:1px solid rgba(255,255,255,0.1);
 }
 
-.connect{
-text-align:center;
-padding:40px 20px;
+.search-box input{
+width:100%;
+max-width:400px;
+padding:12px;
+border-radius:20px;
+border:none;
+outline:none;
 }
 
-.connect a{
+/* SINGLE PRODUCT */
+#singlePage{
+display:none;
+padding:30px 15px;
+}
+
+.single-container{
+max-width:600px;
+margin:auto;
+background:#1b0f30;
+padding:20px;
+border-radius:15px;
+}
+
+.single-container img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.buy-btn{
 display:block;
-margin:10px auto;
+text-align:center;
 padding:14px;
-width:90%;
-max-width:350px;
-border-radius:30px;
-text-decoration:none;
-color:white;
+border-radius:25px;
+background:linear-gradient(90deg,#25d366,#00ffcc);
+color:#fff;
 font-weight:600;
+text-decoration:none;
+margin:20px 0;
+box-shadow:0 0 20px #25d366;
+animation:glow 1.5s infinite alternate;
 }
 
-.instagram{background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);}
-.telegram{background:#229ED9;}
-.whats{background:#25D366;}
+@keyframes glow{
+from{box-shadow:0 0 8px #25d366;}
+to{box-shadow:0 0 30px #00ffcc;}
+}
 
+.description{
+background:#140a26;
+padding:15px;
+border-radius:10px;
+font-size:14px;
+}
+
+.back-btn{
+margin-top:15px;
+padding:8px 18px;
+border-radius:18px;
+border:none;
+background:#222;
+color:#fff;
+cursor:pointer;
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
-background:#12072c;
-margin-top:30px;
-opacity:0.6;
-font-size:14px;
+background:#140a26;
+margin-top:40px;
+font-size:13px;
+color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.hero h1{font-size:22px;}
+.hero .highlight-text{font-size:28px;}
+.store-name{font-size:18px;}
+.service-box-wrapper{padding:20px;}
+.social-service div{font-size:12px;}
 }
 </style>
 </head>
@@ -193,86 +346,136 @@ font-size:14px;
 <body>
 
 <header>
-<div class="logo">GAMEX STORE</div>
-<div class="menu">☰</div>
+<img src="https://via.placeholder.com/100">
+<div class="store-name">NAITIK FF STORE</div>
 </header>
 
-<section class="hero">
-<div class="badge">⚡ Premium Gaming Accounts</div>
-<h1>Grow & Trust With <span>GAMEX STORE</span></h1>
-<p>Discover rare bundles, legendary skins and high-level accounts for Free Fire, PUBG and more.</p>
-
-<a href="#" class="btn whatsapp">WHATSAPP CHANNEL →</a>
-<a href="#products" class="btn gold-btn">FREE FIRE IDS</a>
-</section>
-
-<section class="section" id="products">
-<h2><span style="color:gold;">AVAILABLE</span> Gaming IDs</h2>
-<p>Hand-picked premium accounts with rare items and exclusive bundles</p>
-<a href="#" class="view-all">VIEW ALL →</a>
-
-<div id="productList"></div>
-</section>
-
-<section class="section">
-<div class="feature-box">
-<h3>Rare Collections</h3>
-<p>Access discontinued bundles and limited edition items</p>
+<div class="hero">
+<p class="highlight-text">Premium Gaming Accounts</p>
+<h1>Grow & Trade With <span class="gradient">NAITIK FF STORE</span></h1>
+<a href="#" class="btn btn-whatsapp">WHATSAPP CHANNEL</a>
+<a href="#" class="btn btn-outline">FREE FIRE IDS</a>
 </div>
 
-<div class="feature-box">
-<h3>Secure Deals</h3>
-<p>Direct WhatsApp contact for safe transactions</p>
+<div class="section" id="homeSection">
+<h2>Available Gaming IDs</h2>
+<button class="view-all-btn" onclick="openBrowse()">View All →</button>
+
+<div class="products" id="productContainer"></div>
+
+<!-- PREMIUM SERVICES BOX -->
+<div class="service-box-wrapper">
+<div class="service-item">
+<div class="title">🔥 Rare ID Collection</div>
+<div class="desc">Exclusive legendary accounts available.</div>
+</div>
+<div class="service-item">
+<div class="title">🔒 Secure Deals</div>
+<div class="desc">100% safe and verified transactions.</div>
+</div>
+<div class="service-item">
+<div class="title">⚡ Instant Transfer</div>
+<div class="desc">Instant account delivery after payment.</div>
+</div>
 </div>
 
-<div class="feature-box">
-<h3>Instant Transfer</h3>
-<p>Quick account handover after payment</p>
+<!-- SOCIAL SERVICES BELOW BOX -->
+<div class="social-service">
+<div><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp</div>
+<div><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"> Instagram</div>
+<div><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"> Discord</div>
 </div>
-</section>
 
-<section class="connect">
-<h2>Connect With Us</h2>
+</div>
 
-<a href="#" class="instagram">INSTAGRAM</a>
-<a href="#" class="telegram">TELEGRAM</a>
-<a href="#" class="whats">WHATSAPP</a>
-</section>
+<div id="browsePage">
+<h2 class="highlight gradient">Browse Gaming ID</h2>
+<div class="count" id="productCount"></div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search by UID, Name or Server..." onkeyup="searchProduct()">
+</div>
+<div class="products" id="browseContainer"></div>
+<button class="back-btn" onclick="goHome()">← Back</button>
+</div>
+
+<div id="singlePage">
+<div class="single-container" id="singleContent"></div>
+</div>
 
 <footer>
-© 2026 GAMEX STORE. All rights reserved.
+© 2026 NAITIK FF STORE. All Rights Reserved.
 </footer>
 
 <script>
-let products = JSON.parse(localStorage.getItem("products")) || [];
+let products = [
+{
+uid:"FF123456",
+name:"Premium ID",
+server:"Indian",
+level:"78",
+price:"2499",
+image:"https://i.imgur.com/6X4Q4Qk.jpg",
+whatsappLink:"https://wa.me/919999999999?text=I%20want%20UID%20FF123456",
+description:"High level Free Fire ID with rare bundles."
+}
+];
 
-function displayProducts(){
-let container=document.getElementById("productList");
-container.innerHTML="";
-
-products.forEach((p)=>{
-let message=p.customMessage ? p.customMessage :
-`I want to buy ${p.game} Level ${p.level} for ₹${p.price}`;
-
-let link=`https://wa.me/${p.whatsapp}?text=${encodeURIComponent(message)}`;
-
-container.innerHTML+=`
+function cardHTML(p,i){
+return `
 <div class="card">
 <img src="${p.image}">
-<div class="card-content">
-<div>
-<div style="font-size:14px;color:gold;">${p.game}</div>
-<div class="level">Lvl ${p.level}</div>
-<div class="price">₹${p.price}</div>
-</div>
-<a href="${link}" target="_blank" class="view-btn">VIEW</a>
-</div>
-</div>
-`;
-});
+<div class="row"><div><b>UID:</b> ${p.uid}</div><div><b>Level:</b> ${p.level}</div></div>
+<div class="row"><div class="price">₹${p.price}</div>
+<button class="view-btn" onclick="openProduct(${i})">VIEW</button></div>
+</div>`;
 }
 
-displayProducts();
+function loadHome(){
+let c=document.getElementById("productContainer");
+c.innerHTML="";
+products.forEach((p,i)=>{c.innerHTML+=cardHTML(p,i);});
+}
+
+function openBrowse(){
+document.getElementById("homeSection").style.display="none";
+document.getElementById("browsePage").style.display="block";
+document.getElementById("productCount").innerText=products.length+" Products Available";
+loadBrowse(products);
+}
+
+function loadBrowse(list){
+let c=document.getElementById("browseContainer");
+c.innerHTML="";
+list.forEach((p,i)=>{c.innerHTML+=cardHTML(p,i);});
+}
+
+function searchProduct(){
+let v=document.getElementById("searchInput").value.toLowerCase();
+let f=products.filter(p=>p.uid.toLowerCase().includes(v)||p.name.toLowerCase().includes(v)||p.server.toLowerCase().includes(v));
+loadBrowse(f);
+}
+
+function openProduct(i){
+let p=products[i];
+document.getElementById("homeSection").style.display="none";
+document.getElementById("browsePage").style.display="none";
+document.getElementById("singlePage").style.display="block";
+document.getElementById("singleContent").innerHTML=`
+<img src="${p.image}">
+<div class="row"><div><b>UID:</b> ${p.uid}</div><div><b>Level:</b> ${p.level}</div></div>
+<h3>₹${p.price}</h3>
+<a href="${p.whatsappLink}" target="_blank" class="buy-btn">BUY NOW ON WHATSAPP</a>
+<div class="description">${p.description}</div>
+<button class="back-btn" onclick="goHome()">← Back</button>`;
+}
+
+function goHome(){
+document.getElementById("browsePage").style.display="none";
+document.getElementById("singlePage").style.display="none";
+document.getElementById("homeSection").style.display="block";
+}
+
+loadHome();
 </script>
 
 </body>
