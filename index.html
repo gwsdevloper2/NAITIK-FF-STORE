@@ -211,14 +211,14 @@ border-top:1px solid #32CD32;
 <body>
 
 <header>
-<img src="img.png" class="logo">
+<img src="YOUR_LOGO_URL_HERE" class="logo">
 NAITIK FF STORE
 </header>
 
 <div class="hero">
 <h1>Premium Free Fire Accounts</h1>
 <p>Secure Deals • Trusted Seller • Instant Transfer</p>
-<a href="#" class="btn-main">Join WhatsApp Channel</a>
+<a id="topWhatsappChannel" class="btn-main" target="_blank">Join WhatsApp Channel</a>
 </div>
 
 <div class="section" id="homeSection">
@@ -233,25 +233,25 @@ NAITIK FF STORE
 <div class="services">
 <div class="service-card">
 <h3>🔥 Rare ID Collection</h3>
-<p>High level rare skins & premium accounts available.</p>
+<p>Premium & old rare bundle accounts available.</p>
 </div>
 <div class="service-card">
 <h3>🔒 Secure Deals</h3>
-<p>100% safe & trusted transaction system.</p>
+<p>100% trusted and safe transaction guarantee.</p>
 </div>
 <div class="service-card">
 <h3>⚡ Instant Transfer</h3>
-<p>Fast account transfer after payment confirmation.</p>
+<p>Quick account delivery after payment confirmation.</p>
 </div>
 </div>
 
 <div class="social-wrapper">
 <div class="social-top">
-<a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-<a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+<a id="waLink" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a id="igLink" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
 </div>
 <div>
-<a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+<a id="tgLink" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
 </div>
 </div>
 
@@ -262,7 +262,7 @@ NAITIK FF STORE
 <h3 id="productCount" style="text-align:center;margin-top:10px;color:#7CFC00;"></h3>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Search by UID or Level..." onkeyup="searchProduct()">
+<input type="text" id="searchInput" placeholder="Search by UID..." onkeyup="searchProduct()">
 </div>
 
 <div class="products" id="browseProducts"></div>
@@ -274,18 +274,21 @@ NAITIK FF STORE
 <button class="back-btn" onclick="goBackToBrowse()">Back</button>
 </div>
 
-<!-- FOOTER (LAST WORDS ADDED SAFELY) -->
 <footer class="footer">
 © 2026 NAITIK FF STORE
 </footer>
 
 <script>
 
-let products=[
-{uid:"123456789",level:"70",price:"2500",image:"https://via.placeholder.com/400x250",description:"Rare skins + Elite pass"},
-{uid:"987654321",level:"65",price:"1800",image:"https://via.placeholder.com/400x250",description:"Old ID with bundles"},
-{uid:"555444333",level:"60",price:"1500",image:"https://via.placeholder.com/400x250",description:"Budget friendly ID"}
-];
+let products = JSON.parse(localStorage.getItem("products")) || [];
+let socialLinks = JSON.parse(localStorage.getItem("socialLinks")) || {};
+let channel = localStorage.getItem("whatsappChannelBtn") || "#";
+
+document.getElementById("topWhatsappChannel").href = channel;
+
+if(socialLinks.whatsapp) waLink.href=socialLinks.whatsapp;
+if(socialLinks.instagram) igLink.href=socialLinks.instagram;
+if(socialLinks.telegram) tgLink.href=socialLinks.telegram;
 
 function displayProducts(container,list){
 let c=document.getElementById(container);
@@ -299,22 +302,21 @@ c.innerHTML+=`
 <div class="price">₹${p.price}</div>
 <button class="view-btn" onclick="openProduct(${i})">View</button>
 </div>
-<a href="#" class="buy-btn">Buy Now WhatsApp</a>
+<a href="${p.whatsappLink}" target="_blank" class="buy-btn">Buy Now WhatsApp</a>
 </div>`;
 });
 }
 
 function openBrowse(){
 homeSection.style.display="none";
-singlePage.style.display="none";
 browsePage.style.display="block";
 productCount.innerText="Total Products: "+products.length;
 displayProducts("browseProducts",products);
 }
 
 function searchProduct(){
-let value=searchInput.value.toLowerCase();
-let filtered=products.filter(p=>p.uid.includes(value)||p.level.includes(value));
+let val=searchInput.value.toLowerCase();
+let filtered=products.filter(p=>p.uid.toLowerCase().includes(val));
 displayProducts("browseProducts",filtered);
 }
 
@@ -329,7 +331,7 @@ singleContent.innerHTML=`
 <p>Level: ${p.level}</p>
 <h2 style="color:#32CD32">₹${p.price}</h2>
 <p>${p.description}</p>
-<a href="#" class="buy-btn">Buy Now WhatsApp</a>
+<a href="${p.whatsappLink}" target="_blank" class="buy-btn">Buy Now WhatsApp</a>
 `;
 }
 
@@ -344,7 +346,7 @@ singlePage.style.display="none";
 browsePage.style.display="block";
 }
 
-displayProducts("homeProducts",products.slice(0,2));
+displayProducts("homeProducts",products.slice(0,4));
 
 </script>
 
