@@ -4,12 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NAITIK FF STORE</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-body{margin:0;font-family:Poppins;background:#000;color:#fff}
-header{text-align:center;padding:20px;font-size:22px;font-weight:700;color:#32CD32}
-.hero{text-align:center;padding:30px}
-.hero h1{color:#32CD32}
+body{
+margin:0;
+font-family:Poppins;
+background:#000;
+color:#fff;
+}
+
+/* HEADER */
+header{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:15px 20px;
+font-size:22px;
+font-weight:700;
+color:#32CD32;
+position:relative;
+background:#111;
+}
+
+.logo{
+position:absolute;
+left:15px;
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+color:#32CD32;
+margin-bottom:10px;
+}
+
+/* BUTTON */
 .btn-main{
 display:inline-block;
 padding:14px 25px;
@@ -20,14 +60,27 @@ text-decoration:none;
 font-weight:600;
 margin-top:15px;
 }
-.section{max-width:1100px;margin:30px auto;padding:0 20px}
-.section-title{
-display:flex;
-justify-content:space-between;
-align-items:center;
+
+/* SECTION */
+.section{
+max-width:1100px;
+margin:30px auto;
+padding:0 20px;
 }
-.section-title h2{color:#32CD32}
+
+/* TITLE */
+.section-title{
+margin-bottom:10px;
+}
+
+.section-title h2{
+color:#32CD32;
+margin-bottom:5px;
+}
+
 .view-all{
+display:inline-block;
+margin-top:5px;
 cursor:pointer;
 padding:8px 18px;
 border-radius:20px;
@@ -35,24 +88,43 @@ background:linear-gradient(90deg,#32CD32,#7CFC00);
 color:#000;
 font-weight:600;
 }
+
+/* PRODUCTS */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 margin-top:20px;
 }
+
 .card{
 background:#111;
 padding:15px;
 border-radius:15px;
+transition:0.3s;
 }
-.card img{width:100%;border-radius:10px}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
 .row{
 display:flex;
 justify-content:space-between;
 margin-top:8px;
+font-size:14px;
 }
-.price{color:#7CFC00;font-weight:700}
+
+.price{
+color:#7CFC00;
+font-weight:700;
+}
+
 .view-btn{
 border:1px solid #32CD32;
 color:#32CD32;
@@ -60,7 +132,9 @@ padding:5px 12px;
 border-radius:15px;
 background:none;
 cursor:pointer;
+font-size:12px;
 }
+
 .buy-btn{
 display:block;
 margin-top:10px;
@@ -71,22 +145,86 @@ background:linear-gradient(90deg,#32CD32,#7CFC00);
 color:#000;
 text-decoration:none;
 font-weight:600;
+font-size:14px;
 }
-.services{text-align:center;margin-top:50px}
-.service-box{margin-top:10px}
-.social{
+
+/* SERVICES */
+.services{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.service-card{
+background:#111;
+padding:20px;
+border-radius:15px;
+text-align:center;
+border:1px solid #32CD32;
+transition:0.3s;
+}
+
+.service-card:hover{
+transform:translateY(-5px);
+}
+
+.service-card h3{
+color:#32CD32;
+margin-bottom:10px;
+}
+
+.service-card p{
+color:#ccc;
+font-size:14px;
+}
+
+/* SOCIAL */
+.social-wrapper{
+margin-top:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.social-top{
 display:flex;
 justify-content:center;
-gap:20px;
-margin-top:20px;
+align-items:center;
+gap:30px;
+margin-bottom:15px;
+flex-wrap:wrap;
 }
-.social div{
-cursor:pointer;
+
+.social-wrapper a{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+padding:10px 22px;
+border-radius:25px;
+background:#111;
 color:#7CFC00;
+text-decoration:none;
+border:1px solid #32CD32;
+font-weight:600;
+transition:0.3s;
+min-width:150px;
 }
-footer{text-align:center;padding:20px;margin-top:40px;color:#777}
+
+.social-wrapper a:hover{
+background:#32CD32;
+color:#000;
+}
+
+/* SEARCH */
 #browsePage,#singlePage{display:none}
-.search{text-align:center;margin:15px 0}
+
+.search{
+text-align:center;
+margin:15px 0;
+}
+
 .search input{
 padding:10px;
 width:90%;
@@ -96,6 +234,7 @@ border:1px solid #32CD32;
 background:#111;
 color:#fff;
 }
+
 .back-btn{
 margin-top:15px;
 background:#222;
@@ -105,13 +244,84 @@ padding:8px 15px;
 border-radius:15px;
 cursor:pointer;
 }
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+color:#777;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px){
+
+header{
+font-size:18px;
+padding:12px;
+}
+
+.logo{
+width:38px;
+height:38px;
+left:10px;
+}
+
+.hero{
+padding:20px 15px;
+}
+
+.hero h1{
+font-size:20px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.btn-main{
+padding:10px 18px;
+font-size:14px;
+}
+
+.products{
+grid-template-columns:1fr;
+}
+
+.services{
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.service-card{
+padding:15px;
+}
+
+.social-top{
+gap:15px;
+}
+
+.social-wrapper a{
+min-width:130px;
+padding:8px 15px;
+font-size:14px;
+}
+
+.search input{
+width:95%;
+}
+
+}
 </style>
 </head>
+
 <body>
 
-<header class="main-header">
-<img src="img.com" class="logo">
-<span>NAITIK FF STORE</span>
+<header>
+<img src="logo.png" class="logo">
+NAITIK FF STORE
 </header>
 
 <div class="hero">
@@ -121,37 +331,44 @@ cursor:pointer;
 </div>
 
 <div class="section" id="homeSection">
+
 <div class="section-title">
 <h2>Available Gaming IDs</h2>
 <div class="view-all" onclick="openBrowse()">View All</div>
 </div>
+
 <div class="products" id="homeProducts"></div>
 
+<!-- SERVICES -->
 <div class="services">
-<div class="service-box">🔥 Rare ID Collection</div>
-<div class="service-box">🔒 Secure Deals</div>
-<div class="service-box">⚡ Instant Transfer</div>
-
-<div class="social">
-<div id="wa">WhatsApp</div>
-<div id="ig">Instagram</div>
-<div id="tg">Telegram</div>
-</div>
-</div>
+<div class="service-card">
+<h3>🔥 Rare ID Collection</h3>
+<p>High-level IDs with rare skins & premium collections.</p>
 </div>
 
-<div class="section" id="browsePage">
-<h2 style="color:#32CD32;text-align:center">Browse IDs</h2>
-<div class="search">
-<input type="text" id="searchInput" placeholder="Search UID..." onkeyup="searchProduct()">
-</div>
-<div class="products" id="browseProducts"></div>
-<button class="back-btn" onclick="goHome()">Back</button>
+<div class="service-card">
+<h3>🔒 Secure Deals</h3>
+<p>100% safe and trusted transactions guaranteed.</p>
 </div>
 
-<div class="section" id="singlePage">
-<div id="singleContent"></div>
-<button class="back-btn" onclick="goHome()">Back</button>
+<div class="service-card">
+<h3>⚡ Instant Transfer</h3>
+<p>Quick account handover after payment confirmation.</p>
+</div>
+</div>
+
+<!-- SOCIAL -->
+<div class="social-wrapper">
+<div class="social-top">
+<a id="wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a id="ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+</div>
+
+<div>
+<a id="tg" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+</div>
+</div>
+
 </div>
 
 <footer>© 2026 NAITIK FF STORE</footer>
@@ -172,48 +389,15 @@ c.innerHTML+=`
 <img src="${p.image}">
 <div class="row"><div>UID: ${p.uid}</div><div>Level: ${p.level}</div></div>
 <div class="row"><div class="price">₹${p.price}</div>
-<button class="view-btn" onclick="openProduct(${i})">View</button></div>
+<button class="view-btn">View</button></div>
 <a href="${p.whatsappLink}" target="_blank" class="buy-btn">Buy Now WhatsApp</a>
 </div>`;
 });
 }
 
-function openBrowse(){
-homeSection.style.display="none";
-browsePage.style.display="block";
-display("browseProducts",products);
-}
-
-function goHome(){
-browsePage.style.display="none";
-singlePage.style.display="none";
-homeSection.style.display="block";
-}
-
-function openProduct(i){
-let p=products[i];
-homeSection.style.display="none";
-browsePage.style.display="none";
-singlePage.style.display="block";
-singleContent.innerHTML=`
-<img src="${p.image}" style="width:100%;border-radius:15px">
-<h3 style="color:#7CFC00">UID: ${p.uid}</h3>
-<p>Level: ${p.level}</p>
-<h2 style="color:#32CD32">₹${p.price}</h2>
-<p>${p.description}</p>
-<a href="${p.whatsappLink}" target="_blank" class="buy-btn">Buy Now WhatsApp</a>
-`;
-}
-
-function searchProduct(){
-let val=searchInput.value.toLowerCase();
-let filtered=products.filter(p=>p.uid.toLowerCase().includes(val));
-display("browseProducts",filtered);
-}
-
-if(socialLinks.whatsapp) wa.onclick=()=>window.open(socialLinks.whatsapp);
-if(socialLinks.instagram) ig.onclick=()=>window.open(socialLinks.instagram);
-if(socialLinks.telegram) tg.onclick=()=>window.open(socialLinks.telegram);
+if(socialLinks.whatsapp) document.getElementById("wa").href = socialLinks.whatsapp;
+if(socialLinks.instagram) document.getElementById("ig").href = socialLinks.instagram;
+if(socialLinks.telegram) document.getElementById("tg").href = socialLinks.telegram;
 
 display("homeProducts",products);
 </script>
